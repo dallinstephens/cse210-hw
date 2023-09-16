@@ -31,7 +31,22 @@ class Program
             letterGrade = "F";
         }
 
-        Console.WriteLine($"Letter Grade: {letterGrade}");
+        string sign;
+
+        if (gradePercentage % 10 < 3)
+        {
+            sign = "-";
+        }
+        else if (gradePercentage % 10 >= 7)
+        {
+            sign = "+";
+        }
+        else
+        {
+            sign = "";
+        }
+
+        Console.WriteLine($"Letter Grade: {letterGrade}{sign}");
 
         if (gradePercentage >= 70)
         {
