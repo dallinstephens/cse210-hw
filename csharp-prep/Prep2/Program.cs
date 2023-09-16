@@ -34,6 +34,7 @@ class Program
 
         string sign;
 
+        // Modulus Reference: https://www.w3schools.com/cs/cs_operators.php
         if (gradePercentage % 10 < 3 && letterGrade != "F")
         {
             sign = "-";
