@@ -1,4 +1,5 @@
 using System;
+// Assignment Reference: https://byui-cse.github.io/cse210-course-2023/unit01/csharp-2.html
 
 class Program
 {
@@ -37,7 +38,7 @@ class Program
         {
             sign = "-";
         }
-        else if (gradePercentage % 10 >= 7)
+        else if (gradePercentage % 10 >= 7 && letterGrade != "A")
         {
             sign = "+";
         }
