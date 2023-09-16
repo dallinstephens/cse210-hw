@@ -34,11 +34,11 @@ class Program
 
         string sign;
 
-        if (gradePercentage % 10 < 3)
+        if (gradePercentage % 10 < 3 && letterGrade != "F")
         {
             sign = "-";
         }
-        else if (gradePercentage % 10 >= 7 && letterGrade != "A")
+        else if (gradePercentage % 10 >= 7 && letterGrade != "A" && letterGrade != "F")
         {
             sign = "+";
         }
