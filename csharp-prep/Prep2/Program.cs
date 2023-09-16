@@ -10,23 +10,32 @@ class Program
 
         if (gradePercentage >= 90)
         {
-            Console.Write("Letter Grade: A");
+            Console.WriteLine("Letter Grade: A");
         }
         else if (gradePercentage >= 80)
         {
-            Console.Write("Letter Grade: B");
+            Console.WriteLine("Letter Grade: B");
         }
         else if (gradePercentage >= 70)
         {
-            Console.Write("Letter Grade: C");
+            Console.WriteLine("Letter Grade: C");
         }
         else if (gradePercentage >= 60)
         {
-            Console.Write("Letter Grade: D");
+            Console.WriteLine("Letter Grade: D");
         }
         else
         {
-            Console.Write("Letter Grade: F");
+            Console.WriteLine("Letter Grade: F");
+        }
+
+        if (gradePercentage >= 70)
+        {
+            Console.WriteLine("Congratulations! You passed the course.");
+        }
+        else
+        {
+            Console.WriteLine("Sorry, you did not pass. Please try again.");
         }
     }
 }
