@@ -6,10 +6,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is the magic number? ");
-        string magicNumberString = Console.ReadLine();
-        // Reference for int.Parse() function: https://byui-cse.github.io/cse210-course-2023/unit01/csharp-2.html
-        int magicNumber = int.Parse(magicNumberString);
+        // Reference for random number: https://www.w3schools.blog/c-random-number-between-1-and-100
+        Random randomNumberGenerator = new Random();
+        int magicNumber = randomNumberGenerator.Next(1, 101); // returns random number between 1-101 (includes 1 & 100, excludes 101)
 
         int guess;
 
