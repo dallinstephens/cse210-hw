@@ -1,14 +1,15 @@
 // Reference for this assignment: https://byui-cse.github.io/cse210-course-2023/unit01/csharp-4.html
 
 using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis; // Needed to create lists.
+using System.Collections.Generic; // Needed to create lists.
+using System.Diagnostics.CodeAnalysis;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Instead of using integers, use double so that the average computered
+        // Reference for double: https://www.w3schools.com/cs/cs_data_types.php
+        // Instead of using integers, use double so that the average computed
         // later is a decimal.
         List<double> numbers = new List<double>();
 
@@ -43,5 +44,18 @@ class Program
         // numbers.Count is the count of items (or amount of numbers) in the numbers list
         double avg = sum / numbers.Count;
         Console.WriteLine($"The average is: {avg}");
+
+        // needs a large negative number in case negative numbers are in the numbers list
+        double largestNumber = -999999999999999999;
+
+        foreach (double num in numbers)
+        {
+            if (num > largestNumber)
+            {
+                largestNumber = num;
+            }
+        }
+
+        Console.WriteLine($"The largest number is: {largestNumber}");
     }
 }
