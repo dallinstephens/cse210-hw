@@ -12,6 +12,8 @@ class Program
 
         int guess;
 
+        int howManyGuesses = 1;
+
         do
         {
             Console.Write("What is your guess? ");
@@ -29,7 +31,9 @@ class Program
             else
             {
                 Console.WriteLine("You guessed it!");
+                Console.WriteLine($"Number of guesses: {howManyGuesses}");
             }
+            howManyGuesses++; // This is same as howManyGuesses = howManyGuesses + 1;
         } while (guess != magicNumber);
     }
 }
