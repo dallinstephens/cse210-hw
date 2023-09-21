@@ -6,34 +6,43 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Reference for random number: https://www.w3schools.blog/c-random-number-between-1-and-100
-        Random randomNumberGenerator = new Random();
-        int magicNumber = randomNumberGenerator.Next(1, 101); // returns random number between 1-101 (includes 1 & 100, excludes 101)
 
-        int guess;
-
-        int howManyGuesses = 1;
+        string continueGame;
 
         do
         {
-            Console.Write("What is your guess? ");
-            string guessString = Console.ReadLine();
-            guess = int.Parse(guessString);
+            // Reference for random number: https://www.w3schools.blog/c-random-number-between-1-and-100
+            Random randomNumberGenerator = new Random();
+            int magicNumber = randomNumberGenerator.Next(1, 101); // returns random number between 1-101 (includes 1 & 100, excludes 101)
 
-            if (guess < magicNumber)
+            int guess;
+
+            int howManyGuesses = 1;
+
+            do
             {
-                Console.WriteLine("Higher");
-            }
-            else if (guess > magicNumber)
-            {
-                Console.WriteLine("Lower");
-            }
-            else
-            {
-                Console.WriteLine("You guessed it!");
-                Console.WriteLine($"Number of guesses: {howManyGuesses}");
-            }
-            howManyGuesses++; // This is same as howManyGuesses = howManyGuesses + 1;
-        } while (guess != magicNumber);
+                Console.Write("What is your guess? ");
+                string guessString = Console.ReadLine();
+                guess = int.Parse(guessString);
+
+                if (guess < magicNumber)
+                {
+                    Console.WriteLine("Higher");
+                }
+                else if (guess > magicNumber)
+                {
+                    Console.WriteLine("Lower");
+                }
+                else
+                {
+                    Console.WriteLine("You guessed it!");
+                    Console.WriteLine($"Number of guesses: {howManyGuesses}");
+                }
+                howManyGuesses++; // This is same as howManyGuesses = howManyGuesses + 1;
+            } while (guess != magicNumber);
+
+            Console.Write("Do you want to play again (yes/no)? ");
+            continueGame = Console.ReadLine();
+        } while (continueGame == "yes");
     }
 }
