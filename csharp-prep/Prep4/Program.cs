@@ -45,7 +45,7 @@ class Program
         double avg = sum / numbers.Count;
         Console.WriteLine($"The average is: {avg}");
 
-        // needs a large negative number in case negative numbers are in the numbers list
+        // want a large negative number in case negative numbers are in the numbers list
         double largestNumber = -999999999999999999;
 
         foreach (double num in numbers)
@@ -57,5 +57,18 @@ class Program
         }
 
         Console.WriteLine($"The largest number is: {largestNumber}");
+
+        // initially set smallestPositiveNumber to largestNumber
+        double smallestPositiveNumber = largestNumber;
+
+        foreach (double num in numbers)
+        {
+            if (num > 0 && num < smallestPositiveNumber)
+            {
+                smallestPositiveNumber = num;
+            }
+        }
+
+        Console.WriteLine($"The smallest positive number is: {smallestPositiveNumber}");
     }
 }
