@@ -70,5 +70,14 @@ class Program
         }
 
         Console.WriteLine($"The smallest positive number is: {smallestPositiveNumber}");
+
+        // Reference on how to sort a list: https://www.educative.io/answers/how-to-sort-a-list-in-c-sharp
+        numbers.Sort(); // Sorts the numbers list in ascending order
+
+        Console.Write("New sorted numbers list: ");
+        foreach (double num in numbers)
+        {
+            Console.Write($"{num} ");
+        }
     }
 }
