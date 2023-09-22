@@ -1,4 +1,5 @@
-// Reference fo this assignment: https://byui-cse.github.io/cse210-course-2023/unit01/csharp-5.html
+// Reference for this assignment: https://byui-cse.github.io/cse210-course-2023/unit01/csharp-5.html
+// Reference for sample solution: https://github.com/byui-cse/cse210-student-sample-solutions/blob/main/csharp-prep/Prep5/Program.cs 
 
 using System;
 
