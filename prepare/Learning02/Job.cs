@@ -8,7 +8,7 @@ public class Job
     // _company : string
     // _jobTitle : string
     // _startYear : int
-    // _endYear : int 
+    // _endYear : int
 
     public string _company;
     public string _jobTitle;

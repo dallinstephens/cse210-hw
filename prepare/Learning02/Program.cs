@@ -1,3 +1,5 @@
+// Reference for assignment: https://byui-cse.github.io/cse210-course-2023/unit02/prepare.html
+
 using System;
 
 class Program
