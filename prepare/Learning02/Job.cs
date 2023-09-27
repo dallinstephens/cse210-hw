@@ -18,9 +18,9 @@ public class Job
     // Method(s): member function(s)
     // CLASS DIAGRAM METHOD(S)
     // Job
-    // Display() : void
+    // DisplayJobDetails() : void
 
-    public void Display()
+    public void DisplayJobDetails()
     {
         // Format: "Job Title (Company) StartYear-EndYear"
         // Example: Software Engineer (Microsoft) 2019-2022
