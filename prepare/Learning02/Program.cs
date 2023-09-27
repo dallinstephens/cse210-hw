@@ -1,4 +1,5 @@
 // Reference for assignment: https://byui-cse.github.io/cse210-course-2023/unit02/prepare.html
+// Reference sample solution: https://github.com/byui-cse/cse210-student-sample-solutions/blob/main/prepare/Learning02/Program.cs
 
 using System;
 
