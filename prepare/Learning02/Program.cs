@@ -19,5 +19,11 @@ class Program
         job2._startYear = 2022;
         job2._endYear = 2023;
         job2.DisplayJobDetails();
+
+        Resume myResume = new Resume();
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
+        // Displays "Software Engineer"
+        Console.WriteLine(myResume._jobs[0]._jobTitle);
     }
 }
