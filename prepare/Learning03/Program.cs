@@ -7,28 +7,28 @@ class Program
 {
     static void Main(string[] args)
     {
+        // This is like inputting the whole number 1 since it is the default.
         Fraction fraction = new Fraction();
-        Console.WriteLine(fraction.GetTop());
-        Console.WriteLine(fraction.GetBottom());
-        fraction.SetTop(8);
-        fraction.SetBottom(9);
-        Console.WriteLine(fraction.GetTop());
-        Console.WriteLine(fraction.GetBottom());
+        Console.WriteLine(fraction.GetFractionString());
+        Console.WriteLine(fraction.GetDecimalValue());
 
-        fraction = new Fraction(6);
-        Console.WriteLine(fraction.GetTop());
-        Console.WriteLine(fraction.GetBottom());
-        fraction.SetTop(10);
-        fraction.SetBottom(11);
-        Console.WriteLine(fraction.GetTop());
-        Console.WriteLine(fraction.GetBottom());
+        // Console.WriteLine(fraction.GetTop());
+        // Console.WriteLine(fraction.GetBottom());
+        // fraction.SetTop(8);
+        // fraction.SetBottom(9);
+        // Console.WriteLine(fraction.GetTop());
+        // Console.WriteLine(fraction.GetBottom());
 
-        fraction = new Fraction(6, 7);
-        Console.WriteLine(fraction.GetTop());
-        Console.WriteLine(fraction.GetBottom());
-        fraction.SetTop(12);
-        fraction.SetBottom(13);
-        Console.WriteLine(fraction.GetTop());
-        Console.WriteLine(fraction.GetBottom());
+        fraction = new Fraction(5);
+        Console.WriteLine(fraction.GetFractionString());
+        Console.WriteLine(fraction.GetDecimalValue());
+
+        fraction = new Fraction(3, 4);
+        Console.WriteLine(fraction.GetFractionString());
+        Console.WriteLine(fraction.GetDecimalValue());
+
+        fraction = new Fraction(1, 3);
+        Console.WriteLine(fraction.GetFractionString());
+        Console.WriteLine(fraction.GetDecimalValue());
     }
 }

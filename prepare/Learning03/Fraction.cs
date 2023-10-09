@@ -48,7 +48,9 @@ public class Fraction
 
     public double GetDecimalValue()
     {
-        return _top / _bottom;
+        // Reference to get a double when dividing two integers:
+        // https://stackoverflow.com/questions/661028/how-can-i-divide-two-integers-to-get-a-double
+        return (double)_top / _bottom;
     }
 
 }
