@@ -5,6 +5,7 @@ public class Fraction
 
     public Fraction()
     {
+        // Default is 1/1
         _top = 1;
         _bottom = 1;
     }
@@ -21,26 +22,6 @@ public class Fraction
         _bottom = bottom;
     }
 
-    public int GetTop()
-    {
-        return _top;
-    }
-
-    public void SetTop(int top)
-    {
-        _top = top;
-    }
-
-    public int GetBottom()
-    {
-        return _bottom;
-    }
-
-    public void SetBottom(int bottom)
-    {
-        _bottom = bottom;
-    }
-
     public string GetFractionString()
     {
         return $"{_top}/{_bottom}";
@@ -52,5 +33,27 @@ public class Fraction
         // https://stackoverflow.com/questions/661028/how-can-i-divide-two-integers-to-get-a-double
         return (double)_top / _bottom;
     }
+
+    // NOTE: AVOID USING GETTERS AND SETTERS. THEY WERE NOT NECESSARY WHEN USING THE CONSTRUCTORS.
+
+    // public int GetTop()
+    // {
+    //     return _top;
+    // }
+
+    // public void SetTop(int top)
+    // {
+    //     _top = top;
+    // }
+
+    // public int GetBottom()
+    // {
+    //     return _bottom;
+    // }
+
+    // public void SetBottom(int bottom)
+    // {
+    //     _bottom = bottom;
+    // }    
 
 }
