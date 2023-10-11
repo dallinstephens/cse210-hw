@@ -10,15 +10,16 @@ class Program
     {
         string userInput = "continue";
 
+        string scripture = "Trust in the Lord with all";
+
+        // Reference how to split string:
+        // https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-7.0
+        // Reference how to split string into a list:
+        // https://www.techiedelight.com/split-a-delimited-string-into-a-list-in-csharp/
+        List<string> scriptureWordList = new List<string>(scripture.Split(' '));
+
         while (userInput != "quit")
         {
-            string scripture = "Trust in the Lord with all";
-            // Reference how to split string:
-            // https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-7.0
-            // Reference how to split string into a list:
-            // https://www.techiedelight.com/split-a-delimited-string-into-a-list-in-csharp/
-            List<string> scriptureWordList = new List<string>(scripture.Split(' '));
-
             // Iterates through each word in the scripture word list
             // foreach (string word in scriptureWordList)
             // {
