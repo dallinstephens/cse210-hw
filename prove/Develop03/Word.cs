@@ -2,13 +2,24 @@ public class Word
 {
     private string _word;
 
-    public string RandomWord()
+    public string RandomWord(string scripture)
     {
-        // Reference for random number:
-        // https://www.w3schools.blog/c-random-number-between-1-and-100
+        // Reference to split string:
+        // https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-7.0
+        // Reference to split string into a list:
+        // https://www.techiedelight.com/split-a-delimited-string-into-a-list-in-csharp/
+        List<string> scriptureWordList = new List<string>(scripture.Split(' '));
+
+        // Iterates through each word in the scripture word list
+        // foreach (string word in scriptureWordList)
+        // {
+        //     Console.WriteLine(word);
+        // }
+
         Random randomNumberGenerator = new Random();
-        // Generates a random number between 0-5 (includes 0, excludes 5)
-        // int index = randomNumberGenerator.Next(0, 5);
-        return _word;
+        // Reference to get the number of elements in a list:
+        // https://linuxhint.com/c-sharp-list-length/ 
+        int index = randomNumberGenerator.Next(0, scriptureWordList.Count);
+        return scriptureWordList[index];
     }
 }

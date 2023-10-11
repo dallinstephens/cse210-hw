@@ -19,9 +19,9 @@ class Program
             Console.Clear();
 
             string scripture = "Trust in the Lord with all";
-            // Reference to split string:
+            // Reference how to split string:
             // https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-7.0
-            // Reference to split string into a list:
+            // Reference how to split string into a list:
             // https://www.techiedelight.com/split-a-delimited-string-into-a-list-in-csharp/
             List<string> scriptureWordList = new List<string>(scripture.Split(' '));
 
@@ -36,6 +36,14 @@ class Program
             // https://linuxhint.com/c-sharp-list-length/        
             int index = randomNumberGenerator.Next(0, scriptureWordList.Count);
             Console.WriteLine(scriptureWordList[index]);
+            // Reference how to replace list item:
+            // https://stackoverflow.com/questions/17188966/how-to-replace-list-item-in-best-way
+            scriptureWordList[index] = "Dallin";
+            Console.WriteLine(scriptureWordList[index]);
+            foreach (string word in scriptureWordList)
+            {
+                Console.Write($"{word} ");
+            }
         }
     }
 }
