@@ -3,22 +3,31 @@
 
 using System;
 using System.Dynamic;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 
 class Program
 {
     static void Main(string[] args)
     {
-        string scripture = "Trust in the Lord with all";
+        // Reference on how to have a multiline string:
+        // https://ironpdf.com/blog/net-help/csharp-multiline-string/#:~:text=This%20can%20be%20done%20by,in%20C%23%2010.%22%22%22
+        string text =
+        "Trust in the Lord with all thine heart; " +
+        "and not unto thine own understanding. " +
+        "In all thy ways acknowledge him, and he shall direct thy paths.";
+
+        Scripture scripture = new Scripture("Proverbs 3:5-6", text);
 
         // Reference how to split string:
         // https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-7.0
         // Reference how to split string into a list:
         // https://www.techiedelight.com/split-a-delimited-string-into-a-list-in-csharp/
-        List<string> scriptureWordList = new List<string>(scripture.Split(' '));
+        List<string> scriptureWordList = new List<string>(text.Split(' '));
 
         // Reference how generate random numbers without repeating:
         // https://stackoverflow.com/questions/30014901/generating-random-numbers-without-repeating-c/30014963#30014963
-        // Example used from reference:
+        // Example used from reference (Note: the do while loop would end after 5 random numbers are in the list):
         // List<int> listNumbers = new List<int>();
         // do
         //     {
@@ -28,7 +37,6 @@ class Program
         //             listNumbers.Add(number);
         //         }
         //     } while (listNumbers.Count < 6);
-
 
         // Iterates through each word in the scripture word list
         // foreach (string word in scriptureWordList)
@@ -41,7 +49,7 @@ class Program
         Console.Clear();
 
         // Prints the entire scripture initially
-        Console.WriteLine(scripture);
+        scripture.DisplayScripture();
 
         Console.WriteLine("Press enter to continue or type 'quit' to finish:");
         // Waits for the user to press the enter key
@@ -82,20 +90,29 @@ class Program
 
                 // Prints random word replacement with '_': 
                 // Console.WriteLine(scriptureWordList[index]);
+                //}
+                // Reference for modulus:
+                // https://www.w3schools.com/cs/cs_operators.php
 
-                foreach (string word in scriptureWordList)
+                if (listContainingRandomIndexes.Count % 2 == 0 || listContainingRandomIndexes.Count == scriptureWordList.Count)
                 {
-                    Console.Write($"{word} ");
+
+                    scripture.DisplayScripture();
+
+                    foreach (string word in scriptureWordList)
+                    {
+                        Console.Write($"{word} ");
+                    }
+
+                    Console.WriteLine();
+
+                    Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+                    // Waits for the user to press the enter key
+                    userInput = Console.ReadLine();
+
+                    // Clears the console when user presses enter
+                    Console.Clear();
                 }
-
-                Console.WriteLine();
-
-                Console.WriteLine("Press enter to continue or type 'quit' to finish:");
-                // Waits for the user to press the enter key
-                userInput = Console.ReadLine();
-
-                // Clears the console when user presses enter
-                Console.Clear();
             }
         } while ((listContainingRandomIndexes.Count < scriptureWordList.Count) && userInput != "quit");
     }

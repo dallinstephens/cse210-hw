@@ -4,13 +4,6 @@ public class Reference
     private string _chapter; // string instead of integer because of the "-": Example Proverbs 3:5-6
     private string _verseOrVerses; // string instead of integer because of the "-": : Example Proverbs 3:5-6
 
-    public Reference()
-    {
-        _book = "Book";
-        _chapter = "1";
-        _verseOrVerses = "1";
-    }
-
     public Reference(string singleVerse)
     {
         // Link how to split a string:
@@ -41,6 +34,11 @@ public class Reference
         _chapter = substrings[1];
 
         _verseOrVerses = verseRange;
+    }
+
+    public string ReturnReference()
+    {
+        return $"{_book} {_chapter}:{_verseOrVerses}";
     }
 
 }
