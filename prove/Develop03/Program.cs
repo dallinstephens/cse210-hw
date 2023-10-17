@@ -13,42 +13,48 @@ class Program
         // Reference on how to have a multiline string:
         // https://ironpdf.com/blog/net-help/csharp-multiline-string/#:~:text=This%20can%20be%20done%20by,in%20C%23%2010.%22%22%22
         string text =
-        "Trust in the Lord with all thine heart; " +
-        "and not unto thine own understanding. " +
+        "Trust in the Lord with all thine heart; and lean not unto thine own understanding. " +
         "In all thy ways acknowledge him, and he shall direct thy paths.";
 
         Scripture scripture = new Scripture("Proverbs 3:5-6", text);
 
-        // Reference how to split string:
-        // https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-7.0
-        // Reference how to split string into a list:
-        // https://www.techiedelight.com/split-a-delimited-string-into-a-list-in-csharp/
-        List<string> scriptureWordList = new List<string>(text.Split(' '));
-
-        // Reference how generate random numbers without repeating:
-        // https://stackoverflow.com/questions/30014901/generating-random-numbers-without-repeating-c/30014963#30014963
-        // Example used from reference (Note: the do while loop would end after 5 random numbers are in the list):
-        // List<int> listNumbers = new List<int>();
-        // do
-        //     {
-        //         int number = rand.Next(1,49);
-        //         if(!listNumbers.Contains(number)) 
-        //         {
-        //             listNumbers.Add(number);
-        //         }
-        //     } while (listNumbers.Count < 6);
-
-        // Iterates through each word in the scripture word list
-        // foreach (string word in scriptureWordList)
-        // {
-        //     Console.WriteLine(word);
-        // }
-        List<int> listContainingRandomIndexes = new List<int>();
-
         // Clears the console initially when the program starts
         Console.Clear();
 
-        // Prints the entire scripture initially
+        Console.WriteLine("Welcome to the Scripture Memorizer Program!");
+        Console.WriteLine("How many words do you want to disappear each time?");
+        Console.Write("> ");
+        int numberOfWordsToDisapperEachTime = int.Parse(Console.ReadLine());
+
+        Console.Clear();
+        Console.WriteLine("Welcome to the Scripture Memorizer Program!");
+        Console.WriteLine("Do you want the first letter of each word to appear (y/n)?");
+        Console.Write("> ");
+        string firstLetter = Console.ReadLine();
+
+        Console.Clear();
+        Console.WriteLine("Please choose an option:");
+        Console.WriteLine("1. Choose a scripture from a list.");
+        Console.WriteLine("2. Enter your own scripture.");
+        Console.Write("> ");
+        int option = int.Parse(Console.ReadLine());
+
+        Console.Clear();
+        if (option == 2)
+        {
+            Console.WriteLine("Please enter a scripture reference:");
+            Console.Write("> ");
+            string reference = Console.ReadLine();
+
+            Console.Clear();
+            Console.WriteLine("Please enter the text for the scripture reference:");
+            Console.Write("> ");
+            string textForScripture = Console.ReadLine();
+
+            scripture = new Scripture(reference, textForScripture);
+        }
+
+        Console.Clear();
         scripture.DisplayScripture();
 
         Console.WriteLine("Press enter to continue or type 'quit' to finish:");
@@ -58,53 +64,45 @@ class Program
         // Clears the console when user presses enter
         Console.Clear();
 
+        // Reference on how to generate random numbers without repeating:
+        // https://stackoverflow.com/questions/30014901/generating-random-numbers-without-repeating-c/30014963#30014963
+        // Example from reference:
+        // List<int> listNumbers = new List<int>();
+        // do
+        //     {
+        //         int number = rand.Next(1,49);
+        //         if(!listNumbers.Contains(number)) {
+        //             listNumbers.Add(number);
+        //         }
+        //     } while (listNumbers.Count < 6)
+
+        // This list is empty initially.
+        List<int> listContainingRandomIndexes = new List<int>();
+
+        Word word = new Word();
+
         do
         {
-            Random randomNumberGenerator = new Random();
-            // Reference how to get the number of elements in a list:
-            // https://linuxhint.com/c-sharp-list-length/        
-            int index = randomNumberGenerator.Next(0, scriptureWordList.Count);
-
-            if (!listContainingRandomIndexes.Contains(index))
+            if (firstLetter == "y")
             {
-                listContainingRandomIndexes.Add(index);
+                word = new Word(scripture.ReturnScriptureWordList(), firstLetter);
+                scripture.HideWordInList(word.ReturnHiddenWordIndex(), word.ReturnHiddenWord());
+            }
+            else
+            {
+                word = new Word(scripture.ReturnScriptureWordList());
+                scripture.HideWordInList(word.ReturnHiddenWordIndex(), word.ReturnHiddenWord());
+            }
 
-                // Prints random word:
-                // Console.WriteLine(scriptureWordList[index]);
+            if (!listContainingRandomIndexes.Contains(word.ReturnHiddenWordIndex()))
+            {
+                listContainingRandomIndexes.Add(word.ReturnHiddenWordIndex());
 
-                // Reference how to replace list item:
-                // https://stackoverflow.com/questions/17188966/how-to-replace-list-item-in-best-way
-                // Example: scriptureWordList[index] = "Dallin";
-
-                // Reference how to find length of a string:
-                // https://www.w3schools.com/cs/cs_strings.php
-                // Example: Console.WriteLine(scriptureWordList[index].Length);
-                int wordLength = scriptureWordList[index].Length;
-
-                // Reference how to repeat a character x number of times:
-                // https://stackoverflow.com/questions/3754582/is-there-an-easy-way-to-return-a-string-repeated-x-number-of-times
-                // Example: string myString = new String('-', 5); result: -----
-                // Alternative shortcut: string MyString = new('-', 5); result: -----
-
-                scriptureWordList[index] = new('_', wordLength);
-
-                // Prints random word replacement with '_': 
-                // Console.WriteLine(scriptureWordList[index]);
-                //}
-                // Reference for modulus:
+                // Reference on how to use modulus:
                 // https://www.w3schools.com/cs/cs_operators.php
-
-                if (listContainingRandomIndexes.Count % 2 == 0 || listContainingRandomIndexes.Count == scriptureWordList.Count)
+                if (listContainingRandomIndexes.Count % numberOfWordsToDisapperEachTime == 0 || listContainingRandomIndexes.Count == scripture.ReturnScriptureWordList().Count)
                 {
-
                     scripture.DisplayScripture();
-
-                    foreach (string word in scriptureWordList)
-                    {
-                        Console.Write($"{word} ");
-                    }
-
-                    Console.WriteLine();
 
                     Console.WriteLine("Press enter to continue or type 'quit' to finish:");
                     // Waits for the user to press the enter key
@@ -114,6 +112,6 @@ class Program
                     Console.Clear();
                 }
             }
-        } while ((listContainingRandomIndexes.Count < scriptureWordList.Count) && userInput != "quit");
+        } while ((listContainingRandomIndexes.Count < scripture.ReturnScriptureWordList().Count) && userInput != "quit");
     }
 }
