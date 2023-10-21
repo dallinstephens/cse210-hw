@@ -1,43 +1,36 @@
+using System.Collections.Concurrent;
+using System.Threading.Tasks.Dataflow;
+
 public class Word
 {
-    private string _hiddenWord;
-    private int _hiddenWordIndex;
-
-    // Reference how to pass list as a parameter:
-    // https://stackoverflow.com/questions/13993371/how-to-pass-list-as-parameter-in-function
+    private string _word;
+    // private bool _hidden;
 
     public Word()
     {
-        _hiddenWord = "";
+        _word = "";
     }
-    public Word(List<string> scriptureWordList)
-    {
-        Random randomNumberGenerator = new Random();
-        // Reference to get the number of elements in a list:
-        // https://linuxhint.com/c-sharp-list-length/ 
-        _hiddenWordIndex = randomNumberGenerator.Next(0, scriptureWordList.Count);
 
+    public string HideWord(string _word)
+    {
         // Reference how to find length of a string:
         // https://www.w3schools.com/cs/cs_strings.php
-        int wordLength = scriptureWordList[_hiddenWordIndex].Length;
+        int wordLength = _word.Length;
 
         // Reference how to repeat a character x number of times:
         // https://stackoverflow.com/questions/3754582/is-there-an-easy-way-to-return-a-string-repeated-x-number-of-times
         // Example: string myString = new String('-', 5); result: -----
         // Alternative shortcut: string MyString = new('-', 5); result: -----
-        _hiddenWord = new('_', wordLength);
+        _word = new('_', wordLength);
+
+        return _word;
     }
 
-    public Word(List<string> scriptureWordList, string firstLetter)
+    public string HideWordIncludeFirstLetter(string _word)
     {
-        Random randomNumberGenerator = new Random();
-        // Reference to get the number of elements in a list:
-        // https://linuxhint.com/c-sharp-list-length/ 
-        _hiddenWordIndex = randomNumberGenerator.Next(0, scriptureWordList.Count);
-
         // Reference how to find length of a string:
         // https://www.w3schools.com/cs/cs_strings.php
-        int wordLength = scriptureWordList[_hiddenWordIndex].Length;
+        int wordLength = _word.Length;
 
         // Reference how to repeat a character x number of times:
         // https://stackoverflow.com/questions/3754582/is-there-an-easy-way-to-return-a-string-repeated-x-number-of-times
@@ -47,19 +40,31 @@ public class Word
 
         // Reference how to get the first character of a string:
         // https://www.tutorialspoint.com/How-to-find-the-first-character-of-a-string-in-Chash
-        string firstCharacter = scriptureWordList[_hiddenWordIndex].Substring(0, 1);
+        string firstCharacter = _word.Substring(0, 1);
 
-        _hiddenWord = firstCharacter + hiddenWordMinusFirstCharater;
+        _word = firstCharacter + hiddenWordMinusFirstCharater;
+
+        return _word;
     }
 
-    public string ReturnHiddenWord()
+    public void SetWord(string word)
     {
-        return _hiddenWord;
+        _word = word;
     }
 
-    public int ReturnHiddenWordIndex()
+    public string GetWord()
     {
-        return _hiddenWordIndex;
+        return _word;
     }
+
+    // public void SetHiddenWordStatus(bool trueOrFalse)
+    // {
+    //     _hidden = trueOrFalse;
+    // }
+
+    // public bool GetHiddenWordStatus()
+    // {
+    //     return _hidden;
+    // }
 
 }

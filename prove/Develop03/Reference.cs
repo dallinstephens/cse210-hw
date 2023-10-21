@@ -66,9 +66,9 @@ public class Reference
         _verseOrVerses = verseRange;
     }
 
-    public string ReturnReference()
+    public void DisplayReference()
     {
-        return $"{_book} {_chapter}:{_verseOrVerses}";
+        Console.WriteLine($"{_book} {_chapter}:{_verseOrVerses}");
     }
 
 }
