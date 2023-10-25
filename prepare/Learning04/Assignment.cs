@@ -9,6 +9,9 @@ public class Assignment
         _topic = topic;
     }
 
+    // Made update with getters from reference for sample solution:
+    // https://github.com/byui-cse/cse210-student-sample-solutions/tree/main/prepare/Learning04
+
     public string GetStudentName()
     {
         return _studentName;

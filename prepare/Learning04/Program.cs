@@ -1,6 +1,6 @@
 // Reference for assignment:
 // https://byui-cse.github.io/cse210-course-2023/unit04/prepare.html
-// Referece for sample solution:
+// Reference for sample solution:
 // https://github.com/byui-cse/cse210-student-sample-solutions/tree/main/prepare/Learning04
 
 using System;
