@@ -1,3 +1,7 @@
+// EXCEEDING THE REQUIREMENTS:
+// The questions and prompts do not repeat until all the questions or prompts
+// in the list have been gone through.
+
 using System;
 using System.Diagnostics;
 using System.Xml;
