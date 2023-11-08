@@ -1,5 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
-
 public class Square : Shape
 {
     private double _side;
