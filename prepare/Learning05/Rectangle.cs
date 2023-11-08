@@ -1,5 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
-
 public class Rectangle : Shape
 {
     private double _length;
