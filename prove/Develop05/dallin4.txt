@@ -1,0 +1,2 @@
+20
+ChecklistGoal:Wake up on time,Wake up at 7 am everyday,20,100,7,1

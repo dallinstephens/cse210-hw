@@ -1,0 +1,2 @@
+80
+ChecklistGoal:attend session,tuesday session 7 pm,40,300,3,2
