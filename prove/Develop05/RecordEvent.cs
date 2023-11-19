@@ -95,8 +95,12 @@ public class RecordEvent : Goals
         {
             Console.Clear();
 
+            // Reference for modulus:
+            // https://stackoverflow.com/questions/3427602/c-sharp-modulus-operator
             if (i % 2 == 0)
             {
+                // Reference on how to escape backslash:
+                // https://www.tutorialsteacher.com/csharp/csharp-string#:~:text=C%23%20includes%20escaping%20character%20%5C%20(backslash,include%20it%20in%20a%20string.
                 Console.WriteLine("Hurray!!!");
                 Console.WriteLine("");
                 Console.WriteLine($"\\     /");

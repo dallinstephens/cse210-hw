@@ -1,5 +1,6 @@
-// Reference for assignment:
+// References for assignment:
 // https://byui-cse.github.io/cse210-course-2023/unit05/develop.html
+// https://byui-cse.github.io/cse210-course-2023/unit05/design.html
 
 // EXCEEDING THE REQUIREMENTS:
 // 1. When a goal has been completed, the user can no longer choose it as an option when selecting "5. Record Event". 
