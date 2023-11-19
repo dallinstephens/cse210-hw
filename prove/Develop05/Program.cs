@@ -1,4 +1,13 @@
+// Reference for assignment:
+// https://byui-cse.github.io/cse210-course-2023/unit05/develop.html
+
+// EXCEEDING THE REQUIREMENTS:
+// 1. When a goal has been completed, the user can no longer choose it as an option when selecting "5. Record Event". 
+// When selecting "5", it shows a strike through the goal to show it has been completed and cannot be selected as an option.
+// 2. When a goal has been completed, an animation is displayed showing a person shouting hip, hip, hurray!
+
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 
@@ -21,7 +30,7 @@ class Program
 
             Console.WriteLine();
 
-            Console.WriteLine("Menu Options:");
+            Console.WriteLine($"Menu Options:");
             Console.WriteLine("  1. Create New Goal");
             Console.WriteLine("  2. List Goals");
             Console.WriteLine("  3. Save Goals");

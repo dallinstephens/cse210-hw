@@ -63,7 +63,7 @@ public class Goal
 
     public void QuestionPoints()
     {
-        Console.Write("What the amount of points associated with this goal? ");
+        Console.Write("What is the amount of points associated with this goal? ");
         _points = int.Parse(Console.ReadLine());
     }
 

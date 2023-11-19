@@ -1,0 +1,4 @@
+250
+SimpleGoal:give a talk,speak,100,True
+EternalGoal:study scrip,study for 10 min,50
+ChecklistGoal:attend temple,ordinac,50,500,3,1
