@@ -13,7 +13,7 @@ public class Comment
 
     public override string ToString()
     {
-        return $"Name: {_name}, Comment: {_text}\n";
+        return $"Name: {_name}\nComment: {_text}\n";
     }
 
 }

@@ -14,8 +14,7 @@ public class Video
 
     private int ReturnNumberOfComments()
     {
-        int numberOfComments;
-        return numberOfComments = _comments.Count();
+        return _comments.Count(); // number of comments;
     }
 
     public void AddComment(Comment comment)
@@ -39,7 +38,7 @@ public class Video
     // https://www.youtube.com/watch?v=MwPZLPNR3ns
     public override string ToString()
     {
-        return $"Title: {_title}, Author: {_author}\nLength: {_length}, Number of comments: {ReturnNumberOfComments()}\n" +
+        return $"Title: {_title}\nAuthor: {_author}\nLength: {_length} seconds\nNumber of comments: {ReturnNumberOfComments()}\n" +
                $"{ReturnComments()}\n";
     }
 }
