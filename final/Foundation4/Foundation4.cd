@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Activity">
+    <Position X="4.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAABACAAAAAAAEQAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Activity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cycling">
+    <Position X="4" Y="3.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAEQAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Cycling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Running">
+    <Position X="0.75" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Running.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swimming">
+    <Position X="7" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Swimming.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
